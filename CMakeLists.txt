@@ -28,7 +28,7 @@ set(PICO_BOARD pico_w CACHE STRING "Board type")
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include(pico_sdk_import.cmake)
 
-project(picow_http_client C CXX ASM)
+project(botao-servidor C CXX ASM)
 
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
@@ -49,40 +49,40 @@ target_include_directories(example_lwip_http_util INTERFACE
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(picow_http_client picow_http_client.c )
+add_executable(botao-servidor botao-servidor.c )
 set(WIFI_SSID "aulaEmbarca")
 set(WIFI_PASSWORD "senhaEmbarca123")
-target_compile_definitions(picow_http_client PRIVATE
+target_compile_definitions(botao-servidor PRIVATE
         WIFI_SSID=\"${WIFI_SSID}\"
         WIFI_PASSWORD=\"${WIFI_PASSWORD}\"
         )
 
-pico_set_program_name(picow_http_client "picow_http_client")
-pico_set_program_version(picow_http_client "0.1")
+pico_set_program_name(botao-servidor "botao-servidor")
+pico_set_program_version(botao-servidor "0.1")
 
 # Modify the below lines to enable/disable output over UART/USB
-pico_enable_stdio_uart(picow_http_client 0)
-pico_enable_stdio_usb(picow_http_client 1)
+pico_enable_stdio_uart(botao-servidor 0)
+pico_enable_stdio_usb(botao-servidor 1)
 
 # Add the standard library to the build
-target_link_libraries(picow_http_client
+target_link_libraries(botao-servidor
         pico_stdlib
         pico_cyw43_arch_lwip_threadsafe_background
         example_lwip_http_util
         )
 
 # Add the standard include files to the build
-target_include_directories(picow_http_client PRIVATE
+target_include_directories(botao-servidor PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}
         ${CMAKE_CURRENT_LIST_DIR}/..
 )
 
 # Add any user requested libraries
-target_link_libraries(picow_http_client 
+target_link_libraries(botao-servidor 
         
         )
 
-pico_add_extra_outputs(picow_http_client)
+pico_add_extra_outputs(botao-servidor)
 
 add_executable(picow_http_client_verify
         picow_http_verify.c
