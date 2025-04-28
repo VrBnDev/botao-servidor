@@ -107,10 +107,4 @@ if __name__ == '__main__':
 </div>
 ---
 
-## 📄 Licença
-
-Este projeto está sob a licença MIT. Sinta-se livre para estudar, modificar e compartilhar!
-
----
-
 Feito com 💜 usando Raspberry Pi Pico W e Flask
