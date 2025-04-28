@@ -102,8 +102,9 @@ if __name__ == '__main__':
 
 ## 📷 Demonstração
 
-![Demo.gif](web/static/img/demo.gif)
-
+<div align='center' style='margin: 20px'>
+  <video src='web/static/img/demo.mp4' width='1000' autoplay> 
+</div>
 ---
 
 ## 📄 Licença
